@@ -23,6 +23,9 @@ jobs:
           extensions: mbstring, pdo, curl
           tools: composer
 
+      - name: Set Permissions for Vendor Directory
+        run: chmod -R 777 vendor
+
       - name: Install Composer Dependencies
         run: composer update
 
