@@ -63,6 +63,20 @@ jobs:
           git merge develop --no-ff --allow-unrelated-histories -m "Merging develop into main"
           git push origin main
 
+      - name: Handle Merge Conflicts
+        if: failure()
+        run: |
+          git status
+          git diff
+          # Resolve conflicts manually, for example:
+          # Replace the file with the version from develop or main
+          git checkout --theirs .github/workflows/workflow.yml
+          # OR
+          # git checkout --ours .github/workflows/workflow.yml
+          git add .github/workflows/workflow.yml
+          git commit -m "Resolved merge conflict in workflow.yml"
+          git push origin main
+
   # deploy:
   #   name: Deploy via FTP
   #   runs-on: ubuntu-latest
