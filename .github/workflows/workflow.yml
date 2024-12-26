@@ -60,7 +60,9 @@ jobs:
           git config --global user.name "Abde-Ait-bella"
           git config --global user.email "abdessamadaitbella1998@gmail.com"
           git branch -a
-
+          git switch main
+          git merge --no-ff develop 
+          git push origin main
 
   # deploy:
   #   name: Deploy via FTP
