@@ -24,7 +24,7 @@ jobs:
           tools: composer
 
       - name: Install Composer Dependencies
-        run: composer require phpunit/phpunit
+        run: composer require --dev phpunit/phpunit
 
       # Étape 3 : Installer Node.js et les dépendances npm
       - name: Setup Node.js
