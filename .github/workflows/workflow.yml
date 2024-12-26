@@ -59,6 +59,7 @@ jobs:
         run: |
           git config --global user.name "Abde-Ait-bella"
           git config --global user.email "abdessamadaitbella1998@gmail.com"
+          git remote set-url origin https://Abde-Ait-bella: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@github.com/Abde-Ait-bella/workshop_CICD.git
           git switch main || git checkout -b main 
           git merge develop --no-ff --allow-unrelated-histories -m "Merging develop into main"
           git push origin main
