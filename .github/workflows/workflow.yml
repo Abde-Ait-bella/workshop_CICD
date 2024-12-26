@@ -63,9 +63,6 @@ jobs:
           git switch main || git checkout -b main 
           git merge develop --no-ff --allow-unrelated-histories -m "Merging develop into main"
           git push origin main
-
-
-
       # - name: Handle Merge Conflicts
       #   if: failure()
       #   run: |
