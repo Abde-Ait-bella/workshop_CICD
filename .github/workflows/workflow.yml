@@ -59,23 +59,8 @@ jobs:
         run: |
           git config --global user.name "Abde-Ait-bella"
           git config --global user.email "abdessamadaitbella1998@gmail.com"
-          git switch main || git checkout -b main
+          git switch main || git checkout -b main 
           git merge develop --no-ff --allow-unrelated-histories -m "Merging develop into main"
           git push origin main
 
-  # deploy:
-  #   name: Deploy via FTP
-  #   runs-on: ubuntu-latest
-  #   needs: merge_branch
-
-  #   steps:
-  #     - name: Checkout Code
-  #       uses: actions/checkout@v3
-
-  #     - name: Deploy via FTP
-  #       uses: SamKirkland/FTP-Deploy-Action@4.3.0
-  #       with:
-  #         server: ${{ secrets.FTP_SERVER }}
-  #         username: ${{ secrets.FTP_USERNAME }}
-  #         password: ${{ secrets.FTP_PASSWORD }}
-  #         local-dir: ./ # Remplacez par le chemin du projet si nécessaire
+  
