@@ -59,9 +59,8 @@ jobs:
         run: |
           git config --global user.name "Abde-Ait-bella"
           git config --global user.email "abdessamadaitbella1998@gmail.com"
-          git branch -a
-          git switch main
-          git merge --no-ff develop 
+          git switch main || git checkout -b main
+          git merge develop --no-ff --allow-unrelated-histories -m "Merging develop into main"
           git push origin main
 
   # deploy:
