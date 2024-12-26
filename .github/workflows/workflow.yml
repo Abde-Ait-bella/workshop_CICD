@@ -37,7 +37,8 @@ jobs:
 
       # Étape 4 : Build Tailwind CSS
       - name: Build Tailwind CSS
-        run: npx tailwindcss -i ./styles.css -o ./output.css
+        run: npm install -g tailwindcss
+        run: npx tailwindcss -i ./styles.css -o ./output.css --build
 
       # Étape 5 : Lancer les tests PHPUnit
       - name: Run PHPUnit Tests
