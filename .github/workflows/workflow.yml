@@ -24,7 +24,7 @@ jobs:
           tools: composer
 
       - name: Install Composer Dependencies
-        run: composer install
+        run: composer update
 
       # Étape 3 : Installer Node.js et les dépendances npm
       - name: Setup Node.js
@@ -37,7 +37,7 @@ jobs:
 
       # Étape 4 : Build Tailwind CSS
       - name: Build Tailwind CSS
-        run: npx tailwindcss -i ./styles.css -o ./output.css --build
+        run: npm install -g tailwindcss
 
       # Étape 5 : Lancer les tests PHPUnit
       - name: Run PHPUnit Tests
@@ -54,9 +54,12 @@ jobs:
 
       - name: Merge Branches
         run: |
-          git config --global user.name "Abde-Ait-bella"
-          git config --global user.email "abdessamadaitbella1998@gmail.com"
-          git branch
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git switch main
+          git merge --no-ff <develop> # Remplacez par le nom de la branche à merger
+          git push origin main
+
   # deploy:
   #   name: Deploy via FTP
   #   runs-on: ubuntu-latest
