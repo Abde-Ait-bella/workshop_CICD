@@ -59,10 +59,10 @@ jobs:
         run: |
           git config --global user.name "Abde-Ait-bella"
           git config --global user.email "abdessamadaitbella1998@gmail.com"
-          git switch main || git checkout -b main 
+          git switch main || git checkout -b main
           git merge develop --no-ff --allow-unrelated-histories -m "Merging develop into main"
           git push origin main
-      # - name: Handle Merge Conflicts
+      # - name: Handle Merge Conflictds
       #   if: failure()
       #   run: |
       #     git status
